@@ -1,123 +1,111 @@
-/* พื้นหลังสีพาสเทล */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-
-    background: linear-gradient(
-        -45deg,
-        #ffd6e8,
-        #ffe5b4,
-        #fff5ba,
-        #d8f3dc,
-        #cde7ff,
-        #d8c3ff,
-        #f3d1ff
-    );
+    /* ไล่เฉดสีพาสเทล: ชมพูนม, ม่วงลาเวนเดอร์, ฟ้ามินต์, เหลืองครีม */
+    background: linear-gradient(-45deg, #ffcfe3, #e2cbff, #ccf6ff, #fff5cc);
     background-size: 400% 400%;
-    animation: pastelBG 10s ease infinite;
-
-    color: #333;
+    animation: bgMove 12s ease infinite; /* ปรับให้เคลื่อนไหวช้านุ่มนวล */
+    color: #4a4a4a; /* ตัวอักษรสีเทาเข้ม นุ่มนวลกว่าสีดำสนิท */
 }
 
-/* พื้นหลังพาสเทลเคลื่อนไหว */
-@keyframes pastelBG {
+/* พื้นหลังเคลื่อนไหว */
+@keyframes bgMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Header สีพาสเทล */
 header {
-    background: linear-gradient(
-        90deg,
-        #ffd6e8,
-        #ffe5b4,
-        #fff5ba,
-        #d8f3dc,
-        #cde7ff,
-        #d8c3ff,
-        #f3d1ff
-    );
-    background-size: 400% 400%;
-    animation: pastelBG 8s linear infinite;
-
-    color: #555;
+    /* ไล่เฉดสีพาสเทลโทนม่วง-ชมพู */
+    background: linear-gradient(90deg, #e2cbff, #ffcfe3);
+    color: #6c5ce7; /* สีม่วงพาสเทลเข้มเพื่อให้อ่านง่าย */
     padding: 20px 0;
     text-align: center;
+    animation: fadeDown 1s ease;
+    border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาวละมุน */
 }
 
-/* ตัวอักษรพาสเทล */
-header h1,
-h2,
-h3 {
-    background: linear-gradient(
-        90deg,
-        #ffb6d9,
-        #ffd6a5,
-        #fdffb6,
-        #caffbf,
-        #a0d8ff,
-        #cdb4db,
-        #f1c0e8
-    );
-    background-size: 400%;
-    animation: pastelText 4s linear infinite;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+header h1 {
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8); /* มิติเงาสีขาวด้านหลัง */
 }
 
-/* ตัวหนังสือพาสเทลเคลื่อนไหว */
-@keyframes pastelText {
-    0% { background-position: 0%; }
-    100% { background-position: 400%; }
+header p {
+    margin: 5px 0 0;
+    color: #ff76a3; /* สีชมพูพาสเทลเข้ม */
 }
 
-/* กล่องเนื้อหา */
 section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-
-    border-radius: 15px;
-
-    animation: float 3s ease-in-out infinite;
+    /* กล่องข้อความแบบกระจกขาวโปร่งแสง (Frosted Glass) */
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(10px); /* เพิ่มเอฟเฟกต์เบลอหลังกระจก */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    /* เงารอบกล่องสีนุ่มนวล */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    animation: fadeUp 1s ease;
     transition: all 0.3s ease;
 }
 
-/* ลอยขึ้นลง */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
 section:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    /* เปลี่ยนสีเงาให้เรืองแสงพาสเทลเมื่อเมาส์ชี้ */
+    box-shadow: 0 8px 32px 0 rgba(108, 92, 231, 0.15);
+    background: rgba(255, 255, 255, 0.85);
 }
 
-/* Footer สีพาสเทล */
+h2 {
+    color: #6c5ce7; /* หัวข้อสีม่วงลาเวนเดอร์เข้ม */
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin: 0 0 10px;
+    color: #00b4d8; /* หัวข้อย่อยสีฟ้าน้ำทะเลพาสเทล */
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #5f27cd;
+}
+
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #ffcfe3, #e2cbff);
+    color: #6c5ce7;
+    margin-top: 20px;
+    border-top: 2px solid #ffffff;
+}
 
-    background: linear-gradient(
-        90deg,
-        #ffd6e8,
-        #ffe5b4,
-        #fff5ba,
-        #d8f3dc,
-        #cde7ff,
-        #d8c3ff,
-        #f3d1ff
-    );
-    background-size: 400% 400%;
-    animation: pastelBG 8s linear infinite;
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    color: #555;
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
