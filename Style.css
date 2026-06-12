@@ -1,0 +1,123 @@
+/* พื้นหลังสีพาสเทล */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(
+        -45deg,
+        #ffd6e8,
+        #ffe5b4,
+        #fff5ba,
+        #d8f3dc,
+        #cde7ff,
+        #d8c3ff,
+        #f3d1ff
+    );
+    background-size: 400% 400%;
+    animation: pastelBG 10s ease infinite;
+
+    color: #333;
+}
+
+/* พื้นหลังพาสเทลเคลื่อนไหว */
+@keyframes pastelBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header สีพาสเทล */
+header {
+    background: linear-gradient(
+        90deg,
+        #ffd6e8,
+        #ffe5b4,
+        #fff5ba,
+        #d8f3dc,
+        #cde7ff,
+        #d8c3ff,
+        #f3d1ff
+    );
+    background-size: 400% 400%;
+    animation: pastelBG 8s linear infinite;
+
+    color: #555;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* ตัวอักษรพาสเทล */
+header h1,
+h2,
+h3 {
+    background: linear-gradient(
+        90deg,
+        #ffb6d9,
+        #ffd6a5,
+        #fdffb6,
+        #caffbf,
+        #a0d8ff,
+        #cdb4db,
+        #f1c0e8
+    );
+    background-size: 400%;
+    animation: pastelText 4s linear infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ตัวหนังสือพาสเทลเคลื่อนไหว */
+@keyframes pastelText {
+    0% { background-position: 0%; }
+    100% { background-position: 400%; }
+}
+
+/* กล่องเนื้อหา */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+
+    border-radius: 15px;
+
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* ลอยขึ้นลง */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+section:hover {
+    transform: scale(1.03);
+}
+
+/* Footer สีพาสเทล */
+footer {
+    text-align: center;
+    padding: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ffd6e8,
+        #ffe5b4,
+        #fff5ba,
+        #d8f3dc,
+        #cde7ff,
+        #d8c3ff,
+        #f3d1ff
+    );
+    background-size: 400% 400%;
+    animation: pastelBG 8s linear infinite;
+
+    color: #555;
+}
