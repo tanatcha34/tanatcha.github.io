@@ -1,0 +1,167 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    /* ไล่เฉดสีพาสเทล */
+    background: linear-gradient(-45deg, #ffcfe3, #e2cbff, #ccf6ff, #fff5cc);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+
+    color: #4a4a4a;
+    min-height: 100vh;
+}
+
+/* พื้นหลังเคลื่อนไหว */
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background: linear-gradient(90deg, #e2cbff, #ffcfe3);
+    color: #6c5ce7;
+    padding: 20px 0;
+    text-align: center;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+
+    animation: fadeDown 1s ease;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+header p {
+    color: #e84393;
+}
+
+section {
+    width: 90%;
+    max-width: 800px;
+
+    margin: 20px auto;
+    padding: 20px;
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(31, 38, 135, 0.12);
+
+    animation: fadeUp 1s ease;
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(108, 92, 231, 0.18);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+h2 {
+    color: #6c5ce7;
+    margin-bottom: 15px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin-bottom: 10px;
+    color: #00b4d8;
+}
+
+.project p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #5f27cd;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+footer {
+    text-align: center;
+    padding: 12px 0;
+
+    background: linear-gradient(90deg, #ffcfe3, #e2cbff);
+    color: #6c5ce7;
+
+    margin-top: 20px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* ลด Animation สำหรับผู้ใช้ที่ตั้งค่าไว้ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
